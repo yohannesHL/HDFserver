@@ -25,21 +25,22 @@ This Package has the following requirements:
 ##Install
 
 To install simply run:
+
         python setup.py install
 
 ## Basic Usage
 
-First thing first we need to edit DATA_DIR in the configs.py  to the directory where your data stores are located 
+First thing first we need to edit DATA_DIR in the configs.py  to the directory where your data stores are located.
+This can achieved in different ways
 
 
-
-Alternatively you can do  :
+Firstly you can use *set_data_dir* method  :
 
     import HDFserver
 	HDFserver.set_data_dir( directory )
 
 
-Lets Now Run the REST server.
+###Lets Now Run the REST server.
 
     import HDFserver
 	HDFserver.run(port=7000,...)
@@ -48,23 +49,29 @@ Lets Now Run the REST server.
 
 ### Via Command Line
 You can use one of following commands to start the server 
-        python HDFserver.py
 
-Setting parameters
-        python HDFserver.py -data_dir=DATA_DIR -port=7000 -host=127.0.0.1
+    python HDFserver.py
+
+####Setting parameters
+You can set data directory by supplying data_dir argument. All the usual arguments handled by flask can be included . 
+
+    python HDFserver.py -data_dir=DATA_DIR -port=7000 -host=127.0.0.1
 
 
 ## Consuming
 
 To get a list of hdf5 stores in the directory use:
+
         /stores_/
 
 
-To list keys in the hdf5 file. Where <filename> is the hdf5 file with the extension dropped.
+To list keys in the hdf5 file. Where <filename> is the hdf5 file with the extension dropped:
+
         /keys/<filename>/
 
 
-To retreive data for rows 0 to 99  from table1 in the hdf5 file test.h5
+To retreive data for rows 0 to 99  from table1 in the hdf5 file test.h5:
+
         /test/table1/100/0/
 
 ### Example
