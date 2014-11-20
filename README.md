@@ -2,7 +2,7 @@ HDF REST server
 ===============
 
 
-**HDF REST server ** is a simple RESTful service for HDF5 data stores .
+**HDF REST server** is a simple RESTful service for HDF5 data stores .
 
 ###Author
 Yohannes Libanos
@@ -25,9 +25,8 @@ This Package has the following requirements:
 ##Install
 
 To install simply run:
-``` python setup.py install
+        python setup.py install
 
-```
 ## Basic Usage
 
 First thing first we need to edit DATA_DIR in the configs.py  to the directory where your data stores are located 
@@ -36,51 +35,51 @@ First thing first we need to edit DATA_DIR in the configs.py  to the directory w
 
 Alternatively you can do  :
 
-```import HDFserver
+    import HDFserver
 	HDFserver.set_data_dir( directory )
-```
+
 
 Lets Now Run the REST server.
 
-```import HDFserver
+    import HDFserver
 	HDFserver.run(port=7000,...)
 	
-```
+
 
 ### Via Command Line
 You can use one of following commands to start the server 
-``` python HDFserver.py
-```
+        python HDFserver.py
+
 Setting parameters
-``` python HDFserver.py -data_dir=DATA_DIR -port=7000 -host=127.0.0.1
-```
+        python HDFserver.py -data_dir=DATA_DIR -port=7000 -host=127.0.0.1
+
 
 ## Consuming
 
 To get a list of hdf5 stores in the directory use:
-```/stores_/
-  ```
+        /stores_/
+
 
 To list keys in the hdf5 file. Where <filename> is the hdf5 file with the extension dropped.
-```/keys/<filename>/```
+        /keys/<filename>/
 
 
 To retreive data for rows 0 to 99  from table1 in the hdf5 file test.h5
-```/test/table1/100/0/```
+        /test/table1/100/0/
 
 ### Example
 
-```import requests
+        import requests
 
-print requests.get("http://127.0.0.1:5000/test/table1/100/1").json()
+        print requests.get("http://127.0.0.1:5000/test/table1/100/1").json()
 
-```
+
 Returns:
-```
-{u'table1': u'{"0":{"0":0.7429897161,"1":0.8484121687,"2":0.5145762482,"3":0.1149139957,"4":0.8896877559},
-"1":{"0":0.8473583747,"1":0.7616489838,"2":0.9482270932,"3":0.7261994593,"4":0.6119108996},
-"2":{"0":0.6861526421,"1":0.0728248119,"2":0.3953423794,"3":0.4815486616,"4":0.6398098313}
-}
-}
-```
+   
+        {u'table1': u'{"0":{"0":0.7429897161,"1":0.8484121687,"2":0.5145762482,"3":0.1149139957,"4":0.8896877559},
+        "1":{"0":0.8473583747,"1":0.7616489838,"2":0.9482270932,"3":0.7261994593,"4":0.6119108996},
+        "2":{"0":0.6861526421,"1":0.0728248119,"2":0.3953423794,"3":0.4815486616,"4":0.6398098313}
+        }
+        }
+
 
