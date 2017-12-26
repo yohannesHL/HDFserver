@@ -3,25 +3,24 @@ HDF REST server
 
 
 **HDF REST server** is a simple RESTful service for HDF5 data stores .
-####What is HDFdata store you ask?
+
+#### What is HDFdata store you ask?
 HDF5 is a data model, library, and file format for storing and managing data. HDF5 is suitable for handling large datasets. HDF5 file sizes are much smaller than other comparable data files. And it is superior to mySQL in terms of read/write speed.  [learn more here](http://www.pytables.org/moin)
 
-###Description:
+### Description:
 The  current implementation provides a RESTful interface to view contents of HDF5 data stores. Proving you the ability to query your data store like `localhost/q/HDFfile/table/LIMIT/chunkNum`.
 These data files need to be located in a predefined Directory. GET request are currently handled.
 In later updates PUT, POST, DELETE  request will be implemented to allow creating/modifying data stores using the RESTful interface. 
 
-**Help Wanted!**
 
-
-##Getting started
+## Getting started
 This Package has the following requirements:
 
  * [pandas](https://github.com/pydata/pandas), and pytables for data handling
  * [Flask](http://flask.pocoo.org/), as the http server
  * [Flask-restful](https://github.com/flask-restful/flask-restful) , to install use: pip install flask-restful
 
-##Install
+## Install
 
 To install simply run:
 
@@ -89,6 +88,6 @@ Returns:
         }
 
 
-###Author
+### Author
 Yohannes Libanos
 
