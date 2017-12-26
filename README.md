@@ -59,7 +59,7 @@ Alternativly, if you are using the runnig the server via the api you can use *se
 
 ## Consuming
 
-To get a list of hdf5 stores in the directory use:
+To get a list of hdf5 stores:
 
         /stores_/
 
