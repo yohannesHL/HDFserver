@@ -4,7 +4,7 @@ HDF REST server
 
 **HDF REST server** is a simple RESTful service for HDF5 data stores .
 
-#### What is HDFdata store you ask?
+#### What is HDFdata store?
 HDF5 is a data model, library, and file format for storing and managing data. HDF5 is suitable for handling large datasets. HDF5 file sizes are much smaller than other comparable data files. And it is superior to mySQL in terms of read/write speed.  [learn more here](http://www.pytables.org/moin)
 
 ### Description:
@@ -26,35 +26,36 @@ To install simply run:
 
         python setup.py install
 
-## Basic Usage
-
-First thing first we need to edit DATA_DIR in the configs.py  to the directory where your data stores are located.
-This can achieved in different ways
 
 
-Firstly you can use *set_data_dir* method  :
+## Lets Now Run the REST server.
 
-    import HDFserver
-	HDFserver.set_data_dir( directory )
-
-
-###Lets Now Run the REST server.
+### Via code
 
     import HDFserver
 	HDFserver.run(port=7000,...)
 	
-
-
 ### Via Command Line
 You can use one of following commands to start the server 
 
     python HDFserver.py
 
-####Setting parameters
+#### Setting parameters
 You can set data directory by supplying data_dir argument. All the usual arguments handled by flask can be included . 
 
     python HDFserver.py -data_dir=DATA_DIR -port=7000 -host=127.0.0.1
 
+
+## Basic Usage
+
+First thing first we need to edit DATA_DIR in the configs.py. 
+This should be the directory where your HDF5 data stores are located.
+Alternativly, if you are using the runnig the server via the api you can use *set_data_dir* method  :
+
+    import HDFserver
+	HDFserver.set_data_dir( directory )
+
+# REST API endpoints
 
 ## Consuming
 
